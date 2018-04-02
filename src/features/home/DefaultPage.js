@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import reactLogo from '../../images/react-logo.svg';
-import rekitLogo from '../../images/rekit-logo.svg';
 import * as actions from './redux/actions';
 
 export class DefaultPage extends Component {
@@ -14,50 +11,32 @@ export class DefaultPage extends Component {
   };
 
   render() {
+
     return (
-      <div className="home-default-page">
-        <header className="app-header">
-          <img src={reactLogo} className="app-logo" alt="logo" />
-          <img src={rekitLogo} className="rekit-logo" alt="logo" />
-          <h1 className="app-title">Welcome to React</h1>
-        </header>
-        <div className="app-intro">
-          <h3>To get started:</h3>
-          <ul>
-            <li>
-              Edit component{' '}
-              <a
-                href="http://localhost:6076/element/src%2Ffeatures%2Fhome%2FDefaultPage.js/code"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                src/features/home/DefaultPage.js
-              </a>{' '}
-              for this page.
-            </li>
-            <li>
-              Edit component{' '}
-              <a
-                href="http://localhost:6076/element/src%2Ffeatures%2Fhome%2FApp.js/code"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                src/features/home/App.js
-              </a>{' '}
-              for the root container layout.
-            </li>
-            <li>
-              To see examples, access:&nbsp;
-              <Link to="/examples">/examples</Link>
-            </li>
-            <li>
-              Rekit Studio is running at:&nbsp;
-              <a href="http://localhost:6076/" target="_blank" rel="noopener noreferrer">
-                http://localhost:6076/
-              </a>.
-            </li>
-          </ul>
-        </div>
+      <div className="home-default-page main-content">
+        <a href="http://github.com/supnate/rekit"><img src={require('./../../images/logo.png')} className="app-logo" alt="logo" /></a>
+        <h1>Welcome to your Rekit application!</h1>
+        <i className="fa fa-ellipsis-v"></i>
+        <i className="fa fa-ellipsis-v"></i>
+        <i className="fa fa-asterisk"></i>
+        <i className="fa fa-anchor"></i>
+        <i className="fa fa-align-justify"></i>
+        <p>
+          Contratulations! You have created your Rekit app successfully! Seeing this page means everything works well now.
+        </p>
+        <p>
+          By default <a href="https://github.com/supnate/rekit">Rekit Studio</a> is also started at <a href="http://localhost:6076">http://localhost:6076</a> to manage the project.
+        </p>
+        <p>
+          The app has been initialized with two features named &quot;common&quot; and &quot;home&quot; and two samples: counter and Reddit list viewer as shown below.
+        </p>
+        <p>
+          To learn more about how to get started, you can visit: <a href="http://rekit.js.org/docs/get-started.html">Get started</a>
+        </p>
+        <h3>Demos</h3>
+        <p>Here are two simple demos for your quick reference. You can open the browser dev tools to see Redux action logs.</p>
+        <p className="section-title">To see how Redux works in the project, here is the demo of a simple counter:</p>
+
       </div>
     );
   }
@@ -73,8 +52,11 @@ function mapStateToProps(state) {
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ ...actions }, dispatch),
+    actions: bindActionCreators({ ...actions }, dispatch)
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DefaultPage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DefaultPage);

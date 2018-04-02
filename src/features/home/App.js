@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import SimpleNav from './../common/Navbar.js';
+import routeConfig from './../../common/routeConfig.js';
 
 /*
   This is the root component of your app. Here you define the overall layout
@@ -18,6 +20,8 @@ export default class App extends Component {
   render() {
     return (
       <div className="home-app">
+        <SimpleNav routes={routeConfig} />
+
         <div className="page-container">{this.props.children}</div>
       </div>
     );

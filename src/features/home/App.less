@@ -1,4 +1,27 @@
 @import '../../styles/mixins';
 
 .home-app {
-}
+  height: 100%;
+
+  .sidebar {
+    .memo {
+      &:before {
+        content: ' ';
+        display: block;
+        height: 2px;
+        width: 60px;
+        margin-bottom: 10px;
+        background-color: #ddd;
+      }
+      font-size: 13px;
+      margin-top: 40px;
+      line-height: 150%;
+      color: #aaa;
+    }
+  }
+
+  .page-container {
+    padding: 40px 30px 0 300px;
+    max-width: 800px;
+  }
+};
