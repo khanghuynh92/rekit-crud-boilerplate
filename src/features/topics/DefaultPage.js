@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { Link } from 'react-router-dom'
 
-import PostsList from './ListPage.js';
+import TopicList from './TopicList.js';
 import SearchInput from './../common/SearchInput.js';
 
 export class DefaultPage extends Component {
@@ -19,15 +19,15 @@ export class DefaultPage extends Component {
 
 
     this.fetchTopics = this.fetchTopics.bind(this);
-    this.deletePost = this.deletePost.bind(this);
+    this.deleteTopic = this.deleteTopic.bind(this);
   }
 
   componentDidMount() {
     this.fetchTopics();
   }
 
-  deletePost() {
-    console.log('@deletePost');
+  deleteTopic(topic) {
+    this.props.actions.deleteTopic(topic);
   }
 
   fetchTopics() {
@@ -50,11 +50,11 @@ export class DefaultPage extends Component {
             /> */}
           </div>
           <div className="col-md-6 text-right">
-            <Link to="/posts/new" className="btn btn-primary">New Post</Link>
+            <Link to="/topics/add" className="btn btn-primary">New Post</Link>
           </div>
         </div>
         {list.length > 0 &&
-        <PostsList list={list} onDelete={this.deletePost} />}
+        <TopicList list={list} onDelete={this.deleteTopic} />}
       </div>
     );
   }

@@ -13,7 +13,15 @@ const initialState = {
     total: 0,
     limit: 25,
     page: 0,
-  }
+  },
+  addTopicPending: false,
+  addTopicError: null,
+  fetchTopicPending: false,
+  fetchTopicError: null,
+  updateTopicPending: false,
+  updateTopicError: null,
+  deleteTopicPending: false,
+  deleteTopicError: null
 };
 
 export default initialState;

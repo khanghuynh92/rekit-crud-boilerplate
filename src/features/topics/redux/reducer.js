@@ -8,9 +8,17 @@
 
 import initialState from './initialState';
 import { reducer as fetchTopicsReducer } from './fetchTopics';
+import { reducer as addTopicReducer } from './addTopic';
+import { reducer as fetchTopicReducer } from './fetchTopic';
+import { reducer as updateTopicReducer } from './updateTopic';
+import { reducer as deleteTopicReducer } from './deleteTopic';
 
 const reducers = [
   fetchTopicsReducer,
+  addTopicReducer,
+  fetchTopicReducer,
+  updateTopicReducer,
+  deleteTopicReducer,
 ];
 
 export default function reducer(state = initialState, action) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default class ViewPage extends Component {
+export default class TopicRow extends Component {
 
   static propTypes = {
     topic: PropTypes.object.isRequired,
@@ -13,7 +13,7 @@ export default class ViewPage extends Component {
     const { topic, onDelete } = this.props;
 
     return (
-      <div className="topics-view-page">
+      <div className="topics-topic-row">
           <td>{topic.id}</td>
           <td>{topic.title}</td>
           <td>{topic.description}</td>

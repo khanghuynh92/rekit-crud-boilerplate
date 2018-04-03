@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Row from './ViewPage';
+import Row from './TopicRow';
 import PropTypes from 'prop-types';
 
-export default class ListPage extends Component {
+export default class TopicList extends Component {
   static defaultProps = {
     list: [],
   }
@@ -17,7 +17,7 @@ export default class ListPage extends Component {
 
   render() {
     return (
-      <div className="topics-list-page">
+      <div className="topics-topic-list">
         <table className="table table-hover">
          <thead>
          <tr>
@@ -30,9 +30,9 @@ export default class ListPage extends Component {
          </thead>
          <tbody>
            {this.props.list.length > 0 && this.props.list.map(topic =>
-             <tr key={topic.id}>
-               <Row topic={topic} onDelete={this.props.onDelete} />
-             </tr>
+               <tr key={topic.id}>
+                 <Row topic={topic} onDelete={this.props.onDelete} />
+               </tr>
            )}
          </tbody>
        </table>

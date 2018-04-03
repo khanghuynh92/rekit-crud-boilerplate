@@ -5,16 +5,15 @@ import {
   DefaultPage,
 } from './';
 
-import ListPage from './ListPage.js';
-import EditPage from './EditPage.js';
-import ViewPage from './ViewPage.js';
+import TopicList from './TopicList.js';
+import EditTopic from './EditTopic.js';
 
 export default {
   path: 'topics',
   name: 'Topics',
   childRoutes: [
     { path: '', component: DefaultPage, name: 'Topic List', isIndex: true },
-    { path: 'topic/add', component: EditPage, name: 'New Topic' },
-    { path: 'topic/:topicId', component: ViewPage },
+    { path: '/topics/add', component: EditTopic, name: 'New Topic' },
+    { path: '/topics/:topicId', component: EditTopic, name: 'Update Topic' },
   ],
 };
